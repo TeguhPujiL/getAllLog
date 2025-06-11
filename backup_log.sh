@@ -1,7 +1,14 @@
+echo "************************************************************"
+echo "Memulai Proses Backup Log"
+echo "************************************************************"
+
 #!/bin/bash
 
-LOG_DIR="all_log"
-ARCHIVE_FILE="all_log.tar.gz"
+# Read Current Directory
+curr=${PWD}
+
+LOG_DIR="$curr/all_log"
+ARCHIVE_FILE="$curr/all_log.tar.gz"
 
 # Hapus folder log lama jika ada
 rm -rf "$LOG_DIR"
