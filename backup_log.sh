@@ -1,8 +1,7 @@
+#!/bin/bash
 echo "************************************************************"
 echo "Memulai Proses Backup Log"
 echo "************************************************************"
-
-#!/bin/bash
 
 # Baca Direktory Sekarang
 curr=${PWD}
