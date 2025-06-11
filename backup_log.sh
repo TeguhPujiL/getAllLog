@@ -4,15 +4,11 @@ echo "************************************************************"
 
 #!/bin/bash
 
-# Read Current Directory
+# Baca Direktory Sekarang
 curr=${PWD}
+mkdir $curr/all_log
 
 LOG_DIR=$curr/all_log
-ARCHIVE_FILE=$curr/all_log.tar.gz
-
-# Hapus folder log lama jika ada
-rm -rf $LOG_DIR
-mkdir $LOG_DIR
 
 # Salin log penting dari /var/log
 cp -a /var/log/auth.log $LOG_DIR/ 2>/dev/null
@@ -30,9 +26,9 @@ cp -a /var/log/apache2/*.log $LOG_DIR/ 2>/dev/null
 cp -a /var/log/nginx/*.log $LOG_DIR/ 2>/dev/null
 
 # Buat arsip tar.gz
-tar -czf $ARCHIVE_FILE $LOG_DIR
+tar -czf all_log.tar.gz all_log
 
 # Hapus folder sementara
-rm -rf $LOG_DIR
+rm -rf all_log
 
-echo "Backup log selesai: $ARCHIVE_FILE"
+echo "Backup log selesai: all_log.tar.gz"
